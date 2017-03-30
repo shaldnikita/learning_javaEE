@@ -44,6 +44,7 @@ public class Main {
 
 		tx.begin();
 		em.persist(book);
+		
 		tx.commit();
 
 
