@@ -3,7 +3,15 @@ package Inheritance;
 import javax.persistence.*;
 
 @Entity
-@DiscriminatorValue("B")
+@AttributeOverrides({
+	@AttributeOverride(name = "id",
+	   column = @Column(name = "book_id")),
+	@AttributeOverride(name = "title",
+	   column = @Column(name = "book_title")),
+	@AttributeOverride(name = "description",
+	   column = @Column(name = "book_description"))
+	
+})
 public class Book extends Item{
 	protected String isbn;
 	protected String publisher;
