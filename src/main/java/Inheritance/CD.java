@@ -3,16 +3,9 @@ package Inheritance;
 import javax.persistence.*;
 
 @Entity
-@AttributeOverrides({
-	@AttributeOverride(name = "id",
-	   column = @Column(name = "cd_id")),
-	@AttributeOverride(name = "title",
-	   column = @Column(name = "cd_title")),
-	@AttributeOverride(name = "description",
-	   column = @Column(name = "cd_description"))
-	
-})
 public class CD extends Item{
+	@Id @GeneratedValue
+	private Long id;
 	private String musicCompany;
 	private Integer numberOfCDs;
 	private Float totalDuration;
@@ -60,6 +53,14 @@ public class CD extends Item{
 
 	public void setGenre(String genre) {
 		this.genre = genre;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

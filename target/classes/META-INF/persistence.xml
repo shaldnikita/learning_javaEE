@@ -7,7 +7,6 @@
 	<persistence-unit name="AppWebPU" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>Inheritance.Book</class>
-		<class>Inheritance.Item</class>
 		<class>Inheritance.CD</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />

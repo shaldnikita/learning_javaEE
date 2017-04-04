@@ -1,14 +1,14 @@
 package Inheritance;
 import javax.persistence.*;
 
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 public class Item {
-	@Id @GeneratedValue
 	
 	private Long id;
+	@Column(length = 50, nullable = false)
 	private String title;
 	private Float price;
+	@Column(length = 2000)
 	private String description;
 	
 	public Item(){

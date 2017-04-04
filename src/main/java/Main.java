@@ -37,7 +37,7 @@ public class Main {
 				new Comment("3", "content3", new Integer(3), new Date(Calendar.getInstance().getTimeInMillis())) })));*/
 		
 		Inheritance.Book book = new Inheritance.Book();
-		Inheritance.CD cd = new Inheritance.CD();
+		book.setTitle("title1");
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("AppWebPU");
 		EntityManager em = emf.createEntityManager();
@@ -45,7 +45,7 @@ public class Main {
 
 		tx.begin();
 		em.persist(book);
-		em.persist(cd);
+		//em.persist(cd);
 		tx.commit();
 
 

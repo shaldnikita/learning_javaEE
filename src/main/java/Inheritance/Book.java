@@ -3,22 +3,15 @@ package Inheritance;
 import javax.persistence.*;
 
 @Entity
-@AttributeOverrides({
-	@AttributeOverride(name = "id",
-	   column = @Column(name = "book_id")),
-	@AttributeOverride(name = "title",
-	   column = @Column(name = "book_title")),
-	@AttributeOverride(name = "description",
-	   column = @Column(name = "book_description"))
-	
-})
-public class Book extends Item{
-	protected String isbn;
-	protected String publisher;
-	protected Integer nbOfPage;
-	protected Boolean illustrations;
-	
-	public Book(){
+public class Book extends Item {
+	@Id @GeneratedValue
+	private Long id;
+	private String isbn;
+	private String publisher;
+	private Integer nbOfPage;
+	private Boolean illustrations;
+
+	public Book() {
 	}
 
 	public Book(String isbn, String publisher, Integer nbOfPage, Boolean illustrations) {
@@ -60,5 +53,13 @@ public class Book extends Item{
 	public void setIllustrations(Boolean illustrations) {
 		this.illustrations = illustrations;
 	}
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 }
