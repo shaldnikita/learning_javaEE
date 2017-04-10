@@ -45,10 +45,10 @@ public class Main {
 
 		tx.begin();
 		em.persist(book);
+		book.setDescription("discr");
 		//em.persist(cd);
 		tx.commit();
-
-
+	
 		em.close();
 		emf.close();
 	}
