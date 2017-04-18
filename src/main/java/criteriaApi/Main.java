@@ -40,26 +40,27 @@ public class Main {
 		// 35));
 		// TypedQuery<Customer> query = em.createQuery(criteriaQuery);
 		// List<Customer> cust = query.getResultList();
-		
-		//NamedStoredProcedure
+
+		// NamedStoredProcedure
 		// StoredProcedureQuery query =
 		// em.createNamedStoredProcedureQuery("updateAge");
 		// query.setParameter("cAge", 45);
 		// query.setParameter("cName", "John");
-		
-		
-		//Using remote procedure w/o name
-//		StoredProcedureQuery query = em.createStoredProcedureQuery("updateBooks");
-//		query.registerStoredProcedureParameter("age", Integer.class, ParameterMode.IN);
-//		query.registerStoredProcedureParameter("name", String.class, ParameterMode.IN);
-//		query.setParameter("name", "John");
-//		query.setParameter("age", 15);
-		
-		
+
+		// Using remote procedure w/o name
+		// StoredProcedureQuery query =
+		// em.createStoredProcedureQuery("updateBooks");
+		// query.registerStoredProcedureParameter("age", Integer.class,
+		// ParameterMode.IN);
+		// query.registerStoredProcedureParameter("name", String.class,
+		// ParameterMode.IN);
+		// query.setParameter("name", "John");
+		// query.setParameter("age", 15);
+
 		tx.begin();
-		query.execute();
+		// query.execute();
 		tx.commit();
-		
+
 		em.close();
 		emf.close();
 	}
